@@ -23,11 +23,11 @@ namespace SpecFlowProject_Selenium.StepDefinitions
         {
             using (var client = new HttpClient())
             {
-                //Endpoint istemciler (clients) ve host'lar arasındaki iletişimi şağlamak için kullanılan bir arayüzdür.
+                //Endpoint istemciler (clients) ve host'lar arasÃ½ndaki iletiÃ¾imi Ã¾aÃ°lamak iÃ§in kullanÃ½lan bir arayÃ¼zdÃ¼r.
                 var endpoint = new Uri("https://gorest.co.in/public/v2/users");
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
-                
+                var request = new RestRequest("/public/v2/users/82", Method.Get);
             }
         }
 
